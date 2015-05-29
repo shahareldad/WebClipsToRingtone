@@ -1,6 +1,5 @@
 package com.shahar.eldad.webclipstoringtone;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -16,12 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import java.util.concurrent.ExecutionException;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -33,6 +27,8 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "onCreate.start");
 
         mSearchListFragment = new SearchListFragment();
 
@@ -72,14 +68,11 @@ public class MainActivity extends ActionBarActivity {
 
         private static final String TAG = "SearchListFragment";
 
-        String url ="https://www.youtube.com/results?search_query=";
+        String url ="https://www.youtube.com/results?search_query=%s";
 
         private EditText mSearchStringEditText;
         private Button mSearchButton;
         private TextView mTextViewTemp;
-
-        public SearchListFragment() {
-        }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -92,6 +85,8 @@ public class MainActivity extends ActionBarActivity {
         public void onActivityCreated(@Nullable Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
 
+            Log.d(TAG, "onActivityCreated.start");
+
             mSearchStringEditText = (EditText)getActivity().findViewById(R.id.searchStringEditText);
             mSearchButton = (Button)getActivity().findViewById(R.id.searchButton);
             mTextViewTemp = (TextView)getActivity().findViewById(R.id.textViewTemp);
@@ -101,35 +96,11 @@ public class MainActivity extends ActionBarActivity {
                 public void onClick(View v) {
                     String searchKeyWords = mSearchStringEditText.getText().toString().replace(' ', '+');
 
-                    RequestQueue queue = Volley.newRequestQueue(getActivity());
-                    StringRequest stringRequest = new StringRequest(Request.Method.GET, String.format(url, searchKeyWords),
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
-                                    Log.d(TAG, response);
+                    retrieveFeedTask retrieveFeedTask = new com.shahar.eldad.webclipstoringtone.retrieveFeedTask(getActivity());
 
-                                    parseResponse(response);
-                                    updateListView();
-                                }
-                            }, new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(getActivity(), getString(R.string.SearchYoutubeFailed), Toast.LENGTH_SHORT).show();
-                                }
-                            });
-                    // Add the request to the RequestQueue.
-                    queue.add(stringRequest);
+                    retrieveFeedTask.execute(String.format(url, searchKeyWords));
                 }
             });
-        }
-
-        private void updateListView(){
-            Toast.makeText(getActivity(), getString(R.string.NotImplementedException), Toast.LENGTH_SHORT).show();
-        }
-
-        private void parseResponse(String response){
-
-            Toast.makeText(getActivity(), getString(R.string.NotImplementedException), Toast.LENGTH_SHORT).show();
         }
     }
 }
