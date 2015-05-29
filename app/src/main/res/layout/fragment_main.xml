@@ -34,9 +34,20 @@
 
     </LinearLayout>
 
-    <ListView
-        android:layout_marginTop="20dp"
+    <!--<ListView-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"/>-->
+
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/textViewTemp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+    </ScrollView>
 
 </LinearLayout>

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -75,6 +76,7 @@ public class MainActivity extends ActionBarActivity {
 
         private EditText mSearchStringEditText;
         private Button mSearchButton;
+        private TextView mTextViewTemp;
 
         public SearchListFragment() {
         }
@@ -92,6 +94,7 @@ public class MainActivity extends ActionBarActivity {
 
             mSearchStringEditText = (EditText)getActivity().findViewById(R.id.searchStringEditText);
             mSearchButton = (Button)getActivity().findViewById(R.id.searchButton);
+            mTextViewTemp = (TextView)getActivity().findViewById(R.id.textViewTemp);
 
             mSearchButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -109,11 +112,11 @@ public class MainActivity extends ActionBarActivity {
                                     updateListView();
                                 }
                             }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getActivity(), getString(R.string.SearchYoutubeFailed), Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+                                    Toast.makeText(getActivity(), getString(R.string.SearchYoutubeFailed), Toast.LENGTH_SHORT).show();
+                                }
+                            });
                     // Add the request to the RequestQueue.
                     queue.add(stringRequest);
                 }
@@ -125,6 +128,7 @@ public class MainActivity extends ActionBarActivity {
         }
 
         private void parseResponse(String response){
+
             Toast.makeText(getActivity(), getString(R.string.NotImplementedException), Toast.LENGTH_SHORT).show();
         }
     }
