@@ -9,18 +9,18 @@
         <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\classes-ff4eb6c91192239f3d17afd97cbdff05d2a7a37c.jar" />
     </item>
     <item
-        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\jsoup-1.8.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="580e4dd2a6125cc4037450b40623ac6a552c11df">
-        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\jsoup-1.8.2-aa45fcb3316e1d3f0fe89cbb245e6cd606ab2153.jar" />
-    </item>
-    <item
         jar="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
         <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-adc82eaa81cd69e6cb7e3747d1ccdca892b91e92.jar" />
+    </item>
+    <item
+        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\jsoup-1.8.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="580e4dd2a6125cc4037450b40623ac6a552c11df">
+        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\jsoup-1.8.2-aa45fcb3316e1d3f0fe89cbb245e6cd606ab2153.jar" />
     </item>
     <item
         jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"

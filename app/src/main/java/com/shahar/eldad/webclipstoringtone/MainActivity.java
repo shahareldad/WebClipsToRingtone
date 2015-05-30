@@ -68,7 +68,10 @@ public class MainActivity extends ActionBarActivity {
 
         private static final String TAG = "SearchListFragment";
 
-        String url ="https://www.youtube.com/results?search_query=%s";
+//        String youtubeUrl ="https://m.youtube.com/";
+//        String url ="results?q=%s&sm=3";
+        String youtubeUrl ="https://www.youtube.com/";
+        String url ="results?search_query=%s";
 
         private EditText mSearchStringEditText;
         private Button mSearchButton;
@@ -98,7 +101,7 @@ public class MainActivity extends ActionBarActivity {
 
                     retrieveFeedTask retrieveFeedTask = new com.shahar.eldad.webclipstoringtone.retrieveFeedTask(getActivity());
 
-                    retrieveFeedTask.execute(String.format(url, searchKeyWords));
+                    retrieveFeedTask.execute(String.format(youtubeUrl + url, searchKeyWords));
                 }
             });
         }
