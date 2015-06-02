@@ -2,11 +2,25 @@
 <items version="2" >
 
     <item
+        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\google-http-client-1.20.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="365f575d25fd6e000a36597ea787b2528af696f8">
+        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\google-http-client-1.20.0-a644deeb337589a61c4457b8e8585b6246fcf0ae.jar" />
+    </item>
+    <item
         jar="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.0.0\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="d84409890828e07d344a3b9b1da545dba9897b51">
         <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\classes-ff4eb6c91192239f3d17afd97cbdff05d2a7a37c.jar" />
+    </item>
+    <item
+        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\google-http-client-jackson2-1.20.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="332a6241811b8c12127265393e34558d7bd0e599">
+        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\google-http-client-jackson2-1.20.0-c4e761b69308a2fdbac4f55f7b40c32dfdefe60e.jar" />
     </item>
     <item
         jar="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\libs\internal_impl-22.0.0.jar"
@@ -16,13 +30,6 @@
         <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\internal_impl-22.0.0-adc82eaa81cd69e6cb7e3747d1ccdca892b91e92.jar" />
     </item>
     <item
-        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\jsoup-1.8.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="580e4dd2a6125cc4037450b40623ac6a552c11df">
-        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\jsoup-1.8.2-aa45fcb3316e1d3f0fe89cbb245e6cd606ab2153.jar" />
-    </item>
-    <item
         jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\22.0.0\support-annotations-22.0.0.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -30,11 +37,32 @@
         <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\support-annotations-22.0.0-5f7b639de8135024e42567e7fe1ddfdfd8bac0f0.jar" />
     </item>
     <item
+        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\google-api-services-youtube-v3-rev139-1.20.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="64346ba5935a18d111033646b76fe9812117ef96">
+        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\google-api-services-youtube-v3-rev139-1.20.0-78a4a4480565f1702cd70a3ea7f723e902b55d90.jar" />
+    </item>
+    <item
+        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\google-api-client-jackson2-1.20.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="2bdc414057fc48d2aaf9c26b2e33f41ff0c7f2c5">
+        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\google-api-client-jackson2-1.20.0-23344f6098952b19ca5067f37a7908f507e004f0.jar" />
+    </item>
+    <item
         jar="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.0.0\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
         <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\classes-2293849d069c16633b431aa4d03e7112de2d9c84.jar" />
+    </item>
+    <item
+        jar="E:\Shahar\WebClipsToRingtone\trunk\app\libs\google-api-client-1.20.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b26f611c5c1fbf5bcfe7fcdaff4926fcdfd1f304">
+        <dex dex="E:\Shahar\WebClipsToRingtone\trunk\app\build\intermediates\pre-dexed\debug\google-api-client-1.20.0-b5d74bb4f9157d0b57b7aa8865147d9b29be03e1.jar" />
     </item>
 
 </items>

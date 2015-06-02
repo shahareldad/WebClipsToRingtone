@@ -3,25 +3,29 @@ package com.shahar.eldad.webclipstoringtone;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.model.SearchListResponse;
+import com.google.api.services.youtube.model.SearchResult;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by shahar on 5/29/2015.
  */
-public class retrieveFeedTask extends AsyncTask<String, Void, Document> {
+public class retrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>> {
 
     private static final String TAG = "retrieveFeedTask";
+    private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
+    private static YouTube youtube;
 
-    private Exception exception;
     private FragmentActivity _activity;
 
     public retrieveFeedTask(FragmentActivity activity) {
@@ -29,79 +33,90 @@ public class retrieveFeedTask extends AsyncTask<String, Void, Document> {
         _activity = activity;
     }
 
-    protected Document doInBackground(String... urls) {
+    protected List<SearchResult> doInBackground(String... searchStrings) {
 
         Log.d(TAG, "doInBackground.start");
 
-        String urlToSearch = urls[0];
-        Document document = null;
-        Log.d(TAG, "urlToSearch: " + urlToSearch);
+        String queryTerm = searchStrings[0];
+        Log.d(TAG, "queryTerm: " + queryTerm);
+
+        List<SearchResult> searchResultList = null;
 
         try {
-            document = Jsoup.connect(urlToSearch).get();
+            youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
+                public void initialize(HttpRequest request) throws IOException {
+                }
+            }).setApplicationName("youtube-cmdline-search-sample").build();
+
+            YouTube.Search.List search = youtube.search().list("id,snippet");
+
+            search.setKey("AIzaSyD2x4lnEZ41R08vElsmwElaZG9zIlZrPMQ");
+            search.setQ(queryTerm);
+
+            search.setType("video");
+
+            search.setFields("items(id/kind,id/videoId,snippet/title,snippet/thumbnails/default/url)");
+            search.setMaxResults(NUMBER_OF_VIDEOS_RETURNED);
+
+            SearchListResponse searchResponse = search.execute();
+            searchResultList = searchResponse.getItems();
+
+        } catch (GoogleJsonResponseException e) {
+            System.err.println("There was a service error: " + e.getDetails().getCode() + " : "
+                    + e.getDetails().getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("There was an IO error: " + e.getCause() + " : " + e.getMessage());
+        } catch (Throwable t) {
+            t.printStackTrace();
         }
 
-        if (document == null) {
-            Toast.makeText(_activity, _activity.getString(R.string.SearchYoutubeFailed), Toast.LENGTH_SHORT).show();
-            return null;
-        }
-
-        return document;
+        return searchResultList;
     }
 
-    protected void onPostExecute(Document document) {
+    protected void onPostExecute(List<SearchResult> searchResultList) {
 
         Log.d(TAG, "onPostExecute.start");
 
-        parseResponse(document);
+        if (searchResultList != null) {
+            List<VideoModel> videoModels = parseResponse(searchResultList.iterator());
+            setResultInListView(videoModels);
+        }
     }
 
-    private void parseResponse(Document document){
+    private void setResultInListView(List<VideoModel> videoModels) {
+
+        Log.d(TAG, "setResultInListView.start");
+        Log.d(TAG, "setResultInListView.start.videoModels.Count: " + videoModels.size());
+
+    }
+
+    private List<VideoModel> parseResponse(Iterator<SearchResult> iteratorSearchResults){
 
         Log.d(TAG, "parseResponse.start");
 
-        Elements liElements = getLiElements(document);
+        List<VideoModel> collection = new ArrayList<>();
 
-        Iterator<Element> liElementsIterator = liElements.iterator();
-        while (liElementsIterator.hasNext()){
-            VideoModel model = CreateVideoModel(liElementsIterator.next());
+        while (iteratorSearchResults.hasNext()){
+            VideoModel model = CreateVideoModel(iteratorSearchResults.next());
+            collection.add(model);
         }
 
-        Toast.makeText(_activity, _activity.getString(R.string.NotImplementedException), Toast.LENGTH_SHORT).show();
+        return collection;
     }
 
-    private Elements getLiElements(Document document) {
-        Elements resultsDiv = document.select("div#results");
-        Elements olItemSelection = resultsDiv.select("ol.item-section");
-        return olItemSelection.select("li");
-    }
-
-    private VideoModel CreateVideoModel(Element element) {
+    private VideoModel CreateVideoModel(SearchResult result) {
 
         Log.d(TAG, "CreateVideoModel.start");
 
         VideoModel model = new VideoModel();
 
         Log.d(TAG, "CreateVideoModel.VideoModel created");
-        
-        Element imgElement = element.select("imgElement").first();
-        if (imgElement != null){
-            model.setThumbnail(imgElement.attr("src"));
-        }
 
-        Log.d(TAG, "CreateVideoModel.passed imgElement");
+        model.setVideoId(result.getId().getVideoId());
+        model.setThumbnail(result.getSnippet().getThumbnails().getDefault().getUrl());
+        model.setTitle(result.getSnippet().getTitle());
 
-        Element aTitleElement = element.select(".yt-lockup-title").select("aTitleElement").first();
-        if (aTitleElement != null){
-            model.setTitle(aTitleElement.text());
-            model.setVideoId(aTitleElement.attr("href"));
-        }
-
-        Log.d(TAG, "CreateVideoModel.passed aTitleElement");
-
-        Log.d(TAG, "CreateVideoModel.model.title: " + model.getTitle());
+        Log.d(TAG, "CreateVideoModel.model.id: " + model.getVideoId() + ", title: " + model.getTitle());
 
         return model;
     }
