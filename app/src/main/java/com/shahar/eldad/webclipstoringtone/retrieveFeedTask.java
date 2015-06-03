@@ -86,7 +86,6 @@ public class retrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>
     private void setResultInListView(List<VideoModel> videoModels) {
 
         Log.d(TAG, "setResultInListView.start");
-        Log.d(TAG, "setResultInListView.start.videoModels.Count: " + videoModels.size());
 
     }
 
