@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/videoItemThumbnailImageView"
+            android:layout_width="60"
+            android:layout_height="60"/>
+
+    <TextView
+            android:id="@+id/videoItemTitleTextView"
+            android:layout_width="120"
+            android:layout_height="60"/>
+
+</LinearLayout>

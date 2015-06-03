@@ -1,7 +1,7 @@
 package com.shahar.eldad.webclipstoringtone;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
 import com.google.api.client.http.HttpRequest;
@@ -20,17 +20,27 @@ import java.util.List;
 /**
  * Created by shahar on 5/29/2015.
  */
-public class retrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>> {
+public class RetrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>> {
 
-    private static final String TAG = "retrieveFeedTask";
+    private static final String TAG = "RetrieveFeedTask";
     private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
     private static YouTube youtube;
 
-    private FragmentActivity _activity;
+    private SearchListFragment mFragmentActivity;
+    ProgressDialog pdLoading;
 
-    public retrieveFeedTask(FragmentActivity activity) {
+    public RetrieveFeedTask(SearchListFragment activity) {
 
-        _activity = activity;
+        mFragmentActivity = activity;
+        pdLoading = new ProgressDialog(mFragmentActivity.getActivity());
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+
+        pdLoading.setMessage("\tLoading...");
+        pdLoading.show();
     }
 
     protected List<SearchResult> doInBackground(String... searchStrings) {
@@ -78,15 +88,16 @@ public class retrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>
         Log.d(TAG, "onPostExecute.start");
 
         if (searchResultList != null) {
-            List<VideoModel> videoModels = parseResponse(searchResultList.iterator());
-            setResultInListView(videoModels);
+            List<VideoModel> VideoModels = parseResponse(searchResultList.iterator());
+            setResultInListView(VideoModels);
         }
+        pdLoading.dismiss();
     }
 
-    private void setResultInListView(List<VideoModel> videoModels) {
+    private void setResultInListView(List<VideoModel> VideoModels) {
 
         Log.d(TAG, "setResultInListView.start");
-
+        mFragmentActivity.populateAdapterWithVideoModel(VideoModels);
     }
 
     private List<VideoModel> parseResponse(Iterator<SearchResult> iteratorSearchResults){

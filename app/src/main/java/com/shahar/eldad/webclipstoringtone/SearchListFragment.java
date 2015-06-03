@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 /**
  * Created by shahar on 6/2/2015.
  */
@@ -41,10 +43,17 @@ public class SearchListFragment extends Fragment {
             public void onClick(View v) {
                 String searchKeyWords = mSearchStringEditText.getText().toString();
 
-                retrieveFeedTask retrieveFeedTask = new com.shahar.eldad.webclipstoringtone.retrieveFeedTask(getActivity());
+                RetrieveFeedTask retrieveFeedTask = new RetrieveFeedTask(SearchListFragment.this);
 
                 retrieveFeedTask.execute(searchKeyWords);
             }
         });
+    }
+
+    public void populateAdapterWithVideoModel(List<VideoModel> collection){
+
+        Log.d(TAG, "populateAdapterWithVideoModel.start");
+
+
     }
 }
