@@ -17,14 +17,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by shahar on 5/29/2015.
- */
-public class RetrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>> {
+public class RetrieveFeedTask extends AsyncTask<String, Void, List<VideoModel>> {
 
     private static final String TAG = "RetrieveFeedTask";
     private static final long NUMBER_OF_VIDEOS_RETURNED = 25;
-    private static YouTube youtube;
 
     private SearchListFragment mFragmentActivity;
     ProgressDialog pdLoading;
@@ -43,7 +39,7 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>
         pdLoading.show();
     }
 
-    protected List<SearchResult> doInBackground(String... searchStrings) {
+    protected List<VideoModel> doInBackground(String... searchStrings) {
 
         Log.d(TAG, "doInBackground.start");
 
@@ -53,7 +49,7 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>
         List<SearchResult> searchResultList = null;
 
         try {
-            youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
+            YouTube youtube = new YouTube.Builder(new NetHttpTransport(), new JacksonFactory(), new HttpRequestInitializer() {
                 public void initialize(HttpRequest request) throws IOException {
                 }
             }).setApplicationName("youtube-cmdline-search-sample").build();
@@ -80,16 +76,20 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>
             t.printStackTrace();
         }
 
-        return searchResultList;
+        List<VideoModel> videoModels = null;
+        if (searchResultList != null) {
+            videoModels = parseResponse(searchResultList.iterator());
+        }
+
+        return videoModels;
     }
 
-    protected void onPostExecute(List<SearchResult> searchResultList) {
+    protected void onPostExecute(List<VideoModel> videoModelsList) {
 
         Log.d(TAG, "onPostExecute.start");
 
-        if (searchResultList != null) {
-            List<VideoModel> VideoModels = parseResponse(searchResultList.iterator());
-            setResultInListView(VideoModels);
+        if (videoModelsList != null) {
+            setResultInListView(videoModelsList);
         }
         pdLoading.dismiss();
     }
@@ -97,6 +97,7 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<SearchResult>
     private void setResultInListView(List<VideoModel> VideoModels) {
 
         Log.d(TAG, "setResultInListView.start");
+
         mFragmentActivity.populateAdapterWithVideoModel(VideoModels);
     }
 

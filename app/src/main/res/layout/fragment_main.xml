@@ -39,15 +39,9 @@
         <!--android:layout_width="fill_parent"-->
         <!--android:layout_height="fill_parent"/>-->
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <TextView
-            android:id="@+id/textViewTemp"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-
-    </ScrollView>
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/resultListView"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"/>
 
 </LinearLayout>

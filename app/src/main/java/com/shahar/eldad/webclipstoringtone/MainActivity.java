@@ -10,7 +10,6 @@ import android.view.MenuItem;
 public class MainActivity extends ActionBarActivity {
 
     private static final String TAG = "MainActivity";
-    private SearchListFragment mSearchListFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +18,7 @@ public class MainActivity extends ActionBarActivity {
 
         Log.d(TAG, "onCreate.start");
 
-        mSearchListFragment = new SearchListFragment();
+        SearchListFragment mSearchListFragment = new SearchListFragment();
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
