@@ -1,15 +1,15 @@
 package com.shahar.eldad.webclipstoringtone;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.*;
 
+import java.io.File;
 import java.util.List;
 
 public class SearchListFragment extends Fragment {
@@ -41,18 +41,21 @@ public class SearchListFragment extends Fragment {
 
         mResultListView.setAdapter(mAdapter);
 
-//        mResultListView.setOnClickListener(new View.OnClickListener() {
-//
-//            @Override
-//            public void onClick(View view) {
-//
-//                Log.d(TAG, "onActivityCreated.mResultListView.onClick.start");
-//
-//                TextView videoItemTitleTextView = (TextView) view.findViewById(R.id.videoItemTitleTextView);
-//                VideoModel model = (VideoModel) videoItemTitleTextView.getTag();
-//                new DownloadFileFromURL(SearchListFragment.this, model).execute(file_url + model.getVideoId());
-//            }
-//        });
+        mResultListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Log.d(TAG, "onActivityCreated.mResultListView.onClick.start");
+
+                File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
+
+                TextView videoItemTitleTextView = (TextView) view.findViewById(R.id.videoItemTitleTextView);
+                VideoModel model = (VideoModel) videoItemTitleTextView.getTag();
+                new DownloadFileFromURL(SearchListFragment.this, model).execute(file_url + model.getVideoId());
+            }
+
+        });
 
         Button mSearchButton = (Button) getActivity().findViewById(R.id.searchButton);
 

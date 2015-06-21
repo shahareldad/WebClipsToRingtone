@@ -5,10 +5,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -41,19 +38,20 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         int count;
         try {
             URL url = new URL(f_url[0]);
-            URLConnection conection = url.openConnection();
-            conection.connect();
+            URLConnection connection = url.openConnection();
+            connection.connect();
 
-            // this will be useful so that you can show a tipical 0-100%
+            // this will be useful so that you can show a typical 0-100%
             // progress bar
-            int lenghtOfFile = conection.getContentLength();
+            int lengthOfFile = connection.getContentLength();
 
             // download the file
             InputStream input = new BufferedInputStream(url.openStream(),
                     8192);
 
             // Output stream
-            OutputStream output = new FileOutputStream(Environment.DIRECTORY_RINGTONES + mModel.getTitle() + ".mp3");
+            File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
+            OutputStream output = new FileOutputStream(file + "/" + mModel.getTitle() + ".mp3");
 
             byte data[] = new byte[1024];
 
@@ -63,7 +61,7 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
                 total += count;
                 // publishing the progress....
                 // After this onProgressUpdate will be called
-                publishProgress("" + (int) ((total * 100) / lenghtOfFile));
+                publishProgress("" + (int) ((total * 100) / lengthOfFile));
 
                 // writing data to file
                 output.write(data, 0, count);
