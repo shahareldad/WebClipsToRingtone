@@ -32,12 +32,12 @@ public class VideoModelAdapter extends ArrayAdapter<VideoModel> {
         VideoModel model = getItem(position);
 
         ImageView videoItemThumbnailImageView = (ImageView)v.findViewById(R.id.videoItemThumbnailImageView);
-        videoItemThumbnailImageView.setImageURI(Uri.parse(model.getThumbnail()));
+        new DownloadImageTask(videoItemThumbnailImageView).execute(model.getThumbnail());
 
         TextView videoItemTitleTextView = (TextView)v.findViewById(R.id.videoItemTitleTextView);
         videoItemTitleTextView.setText(model.getTitle());
         videoItemTitleTextView.setTag(model);
 
-        return super.getView(position, convertView, parent);
+        return v;
     }
 }
