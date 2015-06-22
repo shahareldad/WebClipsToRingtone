@@ -11,11 +11,14 @@ import java.net.URLConnection;
 
 public class DownloadFileFromURL extends AsyncTask<String, String, String> {
 
-
+    private static final String TAG = "DownloadFileFromURL";
     private SearchListFragment mSearchListFragment;
     private VideoModel mModel;
+    private boolean mDownloadSuccess = true;
 
     public DownloadFileFromURL(SearchListFragment searchListFragment, VideoModel model) {
+
+        Log.d(TAG, "DownloadFileFromURL_ctor.Started");
 
         mSearchListFragment = searchListFragment;
         mModel = model;
@@ -26,6 +29,9 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
      * */
     @Override
     protected void onPreExecute() {
+
+        Log.d(TAG, "onPreExecute.Started");
+
         super.onPreExecute();
         Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadStarted), Toast.LENGTH_SHORT).show();
     }
@@ -35,8 +41,12 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
      * */
     @Override
     protected String doInBackground(String... f_url) {
+
+        Log.d(TAG, "doInBackground.Started");
+
         int count;
         try {
+            mDownloadSuccess = true;
             URL url = new URL(f_url[0]);
             URLConnection connection = url.openConnection();
             connection.connect();
@@ -50,8 +60,10 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
                     8192);
 
             // Output stream
-            File file = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
-            OutputStream output = new FileOutputStream(file + "/" + mModel.getTitle() + ".mp3");
+            File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
+            File file = new File(path, mModel.getTitle() + ".mp3");
+
+            OutputStream output = new FileOutputStream(file);
 
             byte data[] = new byte[1024];
 
@@ -76,6 +88,7 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
 
         } catch (Exception e) {
             Log.e("Error: ", e.getMessage());
+            mDownloadSuccess = false;
         }
 
         return null;
@@ -85,6 +98,9 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
      * Updating progress bar
      * */
     protected void onProgressUpdate(String... progress) {
+
+        Log.d(TAG, "onProgressUpdate.Started");
+
         // setting progress percentage
     }
 
@@ -93,9 +109,15 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
      * **/
     @Override
     protected void onPostExecute(String file_url) {
-        // dismiss the dialog after the file was downloaded
-        Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadOver), Toast.LENGTH_SHORT).show();
 
+        Log.d(TAG, "onPostExecute.Started");
+
+        // dismiss the dialog after the file was downloaded
+        if (mDownloadSuccess)
+            Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadOver), Toast.LENGTH_SHORT).show();
+        else{
+            Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadFailed), Toast.LENGTH_SHORT).show();
+        }
     }
 
 }
