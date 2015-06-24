@@ -1,5 +1,6 @@
 package com.shahar.eldad.webclipstoringtone;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
@@ -15,6 +16,8 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
     private SearchListFragment mSearchListFragment;
     private VideoModel mModel;
     private boolean mDownloadSuccess = true;
+    private ProgressDialog pDialog;
+    public static final int progress_bar_type = 0;
 
     public DownloadFileFromURL(SearchListFragment searchListFragment, VideoModel model) {
 
@@ -33,7 +36,19 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         Log.d(TAG, "onPreExecute.Started");
 
         super.onPreExecute();
-        Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadStarted), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadStarted), Toast.LENGTH_SHORT).show();
+
+        StartProgressDialog();
+    }
+
+    private void StartProgressDialog() {
+        pDialog = new ProgressDialog(mSearchListFragment.getActivity());
+        pDialog.setMessage("Downloading file. Please wait...");
+        pDialog.setIndeterminate(false);
+        pDialog.setMax(100);
+        pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+        pDialog.setCancelable(true);
+        pDialog.show();
     }
 
     /**
@@ -102,6 +117,7 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         Log.d(TAG, "onProgressUpdate.Started");
 
         // setting progress percentage
+        pDialog.setProgress(Integer.parseInt(progress[0]));
     }
 
     /**
@@ -113,11 +129,13 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         Log.d(TAG, "onPostExecute.Started");
 
         // dismiss the dialog after the file was downloaded
-        if (mDownloadSuccess)
-            Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadOver), Toast.LENGTH_SHORT).show();
-        else{
+        if (mDownloadSuccess == false)
+//            Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadOver), Toast.LENGTH_SHORT).show();
+//        else{
             Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadFailed), Toast.LENGTH_SHORT).show();
-        }
+//        }
+
+        pDialog.dismiss();
     }
 
 }
