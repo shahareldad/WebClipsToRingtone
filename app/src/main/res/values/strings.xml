@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cliptone</string>
+    <string name="search_for_a_video_on_youtube">Search for a video on youtube</string>
+    <string name="action_settings">Settings</string>
+    <string name="NotImplementedException">Not Implemented Exception</string>
+    <string name="SearchYoutubeFailed">Search youtube failed!</string>
+    <string name="DownloadStarted">Download started. You will be notified when over.</string>
+    <string name="DownloadOver">Download over. You may set it as a ringtone.</string>
+    <string name="DownloadFailed">Download failed!</string>
+    <string name="SetDefaultRingtoneDialog">Would you like to set as default ringtone?</string>
+</resources>
