@@ -85,8 +85,9 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
                     8192);
 
             // Output stream
+            String fileName = mModel.getTitle().replaceAll("[^a-zA-Z0-9.-]", "_");
             File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
-            mFile = new File(path, mModel.getTitle() + ".mp3");
+            mFile = new File(path, fileName + ".mp3");
 
             OutputStream output = new FileOutputStream(mFile);
 
@@ -154,14 +155,14 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
     }
 
     private void ScanNewDownloadedFile() {
-        MediaScannerConnection.scanFile(
-                mSearchListFragment.getActivity(),
-                new String[]{mFile.getAbsolutePath()},
-                null,
-                new MediaScannerConnection.OnScanCompletedListener() {
-                    public void onScanCompleted(String path, Uri uri) {
-                    }
-                });
+//        MediaScannerConnection.scanFile(
+//                mSearchListFragment.getActivity(),
+//                new String[]{mFile.getAbsolutePath()},
+//                null,
+//                new MediaScannerConnection.OnScanCompletedListener() {
+//                    public void onScanCompleted(String path, Uri uri) {
+//                    }
+//                });
     }
 
     private void DisplaySetDefaultRingtonePopup(DialogInterface.OnClickListener dialogClickListener) {
