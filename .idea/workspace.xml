@@ -24,8 +24,31 @@
       </layout>
     </layouts>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="app: com.shahar.eldad.Cliptone" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="9a5140c4-5c03-490c-99e5-964cffd29425" name="Default" comment="" />
+    <list default="true" readonly="true" id="9a5140c4-5c03-490c-99e5-964cffd29425" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_22_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_api_client_1_20_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_api_services_youtube_v3_rev139_1_20_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_http_client_1_20_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/google_http_client_jackson2_1_20_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_22_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_22_0_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="WebClipsToRingtone.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/app/build/intermediates/assets/" />
@@ -77,12 +100,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SearchListFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java">
+      <file leaf-file-name="DownloadFileFromURL.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51984125">
-              <caret line="57" column="11" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
-              <folding />
+            <state vertical-scroll-proportion="0.5397112">
+              <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+              <folding>
+                <element signature="method#DownloadFileFromURL#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="docComment;method#onPreExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#onPreExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#StartProgressDialog#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="docComment;method#doInBackground#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="e#2356#2416#0" expanded="false" />
+                <element signature="e#3077#3107#0" expanded="false" />
+                <element signature="docComment;method#onProgressUpdate#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#onProgressUpdate#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="docComment;method#onPostExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#ScanNewDownloadedFile#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="method#DisplaySetDefaultRingtonePopup#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="e#5245#5309#0" expanded="true" />
+                <element signature="method#GetDialogClickListener#0;class#DownloadFileFromURL#0" expanded="false" />
+                <element signature="e#6035#6054#0" expanded="false" />
+                <element signature="method#SetDefaultRingtone#0;class#DownloadFileFromURL#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1056,7 +1098,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4300900164195" />
+        <entry key="$PROJECT_DIR$" value="4302496856294" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1222,9 +1264,9 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.4/4216af16d38465bbab0f3dff8efa14204f7a399a/commons-codec-1.4.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.external.lombok/lombok-ast/0.2.3/b4f90836c51edefa4a38c97877b709ed2c15ee32/lombok-ast-0.2.3-sources.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.tools.external.lombok/lombok-ast/0.2.3/528b6f8bde3157f17530aa366631f2aad2a6cf9/lombok-ast-0.2.3.jar" />
-                            <option value="E:/Android/android-sdk/extras/android/m2repository/com/android/support/appcompat-v7/22.0.0/appcompat-v7-22.0.0.aar" />
-                            <option value="E:/Android/android-sdk/extras/android/m2repository/com/android/support/support-v4/22.0.0/support-v4-22.0.0.aar" />
-                            <option value="E:/Android/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar" />
+                            <option value="C:/Program Files (x86)/Android/android-sdk/extras/android/m2repository/com/android/support/appcompat-v7/22.0.0/appcompat-v7-22.0.0.aar" />
+                            <option value="C:/Program Files (x86)/Android/android-sdk/extras/android/m2repository/com/android/support/support-v4/22.0.0/support-v4-22.0.0.aar" />
+                            <option value="C:/Program Files (x86)/Android/android-sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar" />
                             <option value="$MODULE_DIR$/libs/google-api-client-1.20.0.jar" />
                             <option value="$MODULE_DIR$/libs/google-api-services-youtube-v3-rev139-1.20.0.jar" />
                             <option value="$MODULE_DIR$/libs/google-http-client-1.20.0.jar" />
@@ -1241,59 +1283,6 @@
               <option name="name" value="app" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/ant-1.9.3.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/ant-launcher-1.9.3.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-base-services-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-base-services-groovy-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-cli-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-core-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-docs-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-launcher-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-messaging-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-model-core-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-model-groovy-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-native-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-open-api-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-resources-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-tooling-api-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-ui-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/gradle-wrapper-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/groovy-all-2.3.6.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/ant-antlr-1.9.3.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-announce-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-antlr-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-build-comparison-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-build-init-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-code-quality-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-cunit-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-dependency-management-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-diagnostics-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-ear-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-ide-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-ide-native-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-ivy-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-jacoco-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-javascript-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-jetty-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-language-groovy-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-language-java-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-language-jvm-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-language-native-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-maven-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-osgi-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-platform-base-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-platform-jvm-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-platform-native-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-plugin-development-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-plugin-use-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-plugins-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-publish-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-reporting-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-resources-http-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-scala-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-signing-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/gradle-sonar-2.2.1.jar" />
-                  <option value="E:/Android/android-studio/gradle/gradle-2.2.1/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -1326,6 +1315,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/webclipstoringtone/DownloadFileFromURL.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" />
       </list>
     </option>
   </component>
@@ -1346,8 +1336,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -1375,7 +1365,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebClipsToRingtone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1536,16 +1535,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebClipsToRingtone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
@@ -1674,7 +1664,7 @@
     <property name="FullScreen" value="false" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="192.168.56.100:5555" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="Z9DM49GM55H6MVZS" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -1684,10 +1674,11 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/libs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DEBUGGABLE_DEVICE" value="andy_os_inc_-andywin-192.168.56.100:5555" />
     <property name="DEBUGGABLE_PROCESS" value="com.shahar.eldad.webclipstoringtone" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -1967,31 +1958,31 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration" cleanupOnStartRun="true">
-    <configuration>C:\Users\shaha_000\AppData\Roaming\Subversion</configuration>
+    <configuration>C:\Users\SE250071\AppData\Roaming\Subversion</configuration>
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="SvnFileUrlMappingImpl">
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\Shahar\WebClipsToRingtone\trunk" />
-          <option name="myCopyRoot" value="E:\Shahar\WebClipsToRingtone\trunk" />
+          <option name="myVcsRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk" />
+          <option name="myCopyRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\Shahar\WebClipsToRingtone\trunk\.idea" />
-          <option name="myCopyRoot" value="E:\Shahar\WebClipsToRingtone\trunk\.idea" />
+          <option name="myVcsRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk\.idea" />
+          <option name="myCopyRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk\.idea" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\Shahar\WebClipsToRingtone\trunk\app" />
-          <option name="myCopyRoot" value="E:\Shahar\WebClipsToRingtone\trunk\app" />
+          <option name="myVcsRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk\app" />
+          <option name="myCopyRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk\app" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="E:\Shahar\WebClipsToRingtone\trunk" />
-          <option name="myCopyRoot" value="E:\Shahar\WebClipsToRingtone\trunk" />
+          <option name="myVcsRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk" />
+          <option name="myCopyRoot" value="C:\Users\SE250071\AndroidStudioProjects\WebClipsToRingtone\trunk" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -2015,33 +2006,33 @@
       <workItem from="1434557573669" duration="1659000" />
       <workItem from="1434868612667" duration="8914000" />
       <workItem from="1435173108067" duration="2412000" />
+      <workItem from="1435223295237" duration="1382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28821000" />
+    <option name="totallyTimeSpent" value="30203000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32603687" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32594937" sideWeight="0.496875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38824886" sideWeight="0.39805827" order="7" side_tool="true" content_ui="tabs" x="0" y="319" width="1280" height="346" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328341" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32805908" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38709676" sideWeight="0.60194176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38607594" sideWeight="0.60194176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23462783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45967743" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2056,6 +2047,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847896" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45967743" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -2078,7 +2070,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java</url>
-          <line>90</line>
+          <line>92</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
@@ -2092,6 +2084,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2362,13 +2362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://E:/Android/android-sdk/platforms/android-22/android.jar!/android/widget/ArrayAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35084033">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.50695825">
@@ -2413,14 +2406,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.082125604">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2435,7 +2420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.047222223">
           <caret line="1" column="36" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2475,15 +2459,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.038548753">
           <caret line="5" column="75" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51984125">
+        <state vertical-scroll-proportion="0.4762684">
           <caret line="57" column="11" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5397112">
+          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
+          <folding>
+            <element signature="method#DownloadFileFromURL#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="docComment;method#onPreExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#onPreExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#StartProgressDialog#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="docComment;method#doInBackground#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="e#2356#2416#0" expanded="false" />
+            <element signature="e#3077#3107#0" expanded="false" />
+            <element signature="docComment;method#onProgressUpdate#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#onProgressUpdate#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="docComment;method#onPostExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#ScanNewDownloadedFile#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="method#DisplaySetDefaultRingtonePopup#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="e#5245#5309#0" expanded="true" />
+            <element signature="method#GetDialogClickListener#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="e#6035#6054#0" expanded="false" />
+            <element signature="method#SetDefaultRingtone#0;class#DownloadFileFromURL#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.media.MediaScannerConnection;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -140,15 +142,33 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         if (mDownloadSuccess == false)
             Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadFailed), Toast.LENGTH_SHORT).show();
         else{
+
+            ScanNewDownloadedFile();
+
             DialogInterface.OnClickListener dialogClickListener = GetDialogClickListener();
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(mSearchListFragment.getActivity());
-            builder.setMessage(mSearchListFragment.getString(R.string.SetDefaultRingtoneDialog))
-                    .setPositiveButton("Yes", dialogClickListener)
-                    .setNegativeButton("No", dialogClickListener).show();
+            DisplaySetDefaultRingtonePopup(dialogClickListener);
         }
 
         pDialog.dismiss();
+    }
+
+    private void ScanNewDownloadedFile() {
+        MediaScannerConnection.scanFile(
+                mSearchListFragment.getActivity(),
+                new String[]{mFile.getAbsolutePath()},
+                null,
+                new MediaScannerConnection.OnScanCompletedListener() {
+                    public void onScanCompleted(String path, Uri uri) {
+                    }
+                });
+    }
+
+    private void DisplaySetDefaultRingtonePopup(DialogInterface.OnClickListener dialogClickListener) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mSearchListFragment.getActivity());
+        builder.setMessage(mSearchListFragment.getString(R.string.SetDefaultRingtoneDialog))
+                .setPositiveButton("Yes", dialogClickListener)
+                .setNegativeButton("No", dialogClickListener).show();
     }
 
     private DialogInterface.OnClickListener GetDialogClickListener() {
