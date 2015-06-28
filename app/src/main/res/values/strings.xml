@@ -9,4 +9,5 @@
     <string name="DownloadFailed">Download failed!</string>
     <string name="SetDefaultRingtoneDialog">Would you like to set as default ringtone?</string>
     <string name="NoInternetConnection">No internet connection found</string>
+    <string name="OK">OK</string>
 </resources>

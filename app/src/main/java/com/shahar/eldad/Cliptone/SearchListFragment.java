@@ -70,26 +70,31 @@ public class SearchListFragment extends Fragment {
 
                 Log.d(TAG, "onActivityCreated.mSearchButton.onClick.start");
 
+                String searchKeyWords = mSearchStringEditText.getText().toString();
+                if (searchKeyWords == null || searchKeyWords.isEmpty())
+                    return;
+
                 if (isOnline() == false){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                    builder.setMessage(getString(R.string.SetDefaultRingtoneDialog))
-                            .setNeutralButton(getString(R.string.NoInternetConnection), new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    return;
-                                }
-                            }).show();
+                    ShowAlertDialogNoConnection();
                     return;
                 }
-
-
-                String searchKeyWords = mSearchStringEditText.getText().toString();
 
                 RetrieveFeedTask retrieveFeedTask = new RetrieveFeedTask(SearchListFragment.this);
 
                 retrieveFeedTask.execute(searchKeyWords);
             }
         });
+    }
+
+    private void ShowAlertDialogNoConnection() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setMessage(getString(R.string.NoInternetConnection))
+                .setNeutralButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        return;
+                    }
+                }).show();
     }
 
     public boolean isOnline() {
