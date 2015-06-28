@@ -8,4 +8,5 @@
     <string name="DownloadOver">Download over. You may set it as a ringtone.</string>
     <string name="DownloadFailed">Download failed!</string>
     <string name="SetDefaultRingtoneDialog">Would you like to set as default ringtone?</string>
+    <string name="NoInternetConnection">No internet connection found</string>
 </resources>

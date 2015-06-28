@@ -1,5 +1,10 @@
 package com.shahar.eldad.Cliptone;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -65,6 +70,19 @@ public class SearchListFragment extends Fragment {
 
                 Log.d(TAG, "onActivityCreated.mSearchButton.onClick.start");
 
+                if (isOnline() == false){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage(getString(R.string.SetDefaultRingtoneDialog))
+                            .setNeutralButton(getString(R.string.NoInternetConnection), new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    return;
+                                }
+                            }).show();
+                    return;
+                }
+
+
                 String searchKeyWords = mSearchStringEditText.getText().toString();
 
                 RetrieveFeedTask retrieveFeedTask = new RetrieveFeedTask(SearchListFragment.this);
@@ -72,6 +90,12 @@ public class SearchListFragment extends Fragment {
                 retrieveFeedTask.execute(searchKeyWords);
             }
         });
+    }
+
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
     public void populateAdapterWithVideoModel(List<VideoModel> collection){
