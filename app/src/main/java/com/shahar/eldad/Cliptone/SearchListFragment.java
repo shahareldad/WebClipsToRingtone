@@ -1,10 +1,13 @@
 package com.shahar.eldad.Cliptone;
 
 import android.app.AlertDialog;
+import android.app.DownloadManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.Fragment;
@@ -28,8 +31,10 @@ public class SearchListFragment extends Fragment {
     private VideoModelAdapter mAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        Log.d(TAG, "onCreateView.Started");
+
         return inflater.inflate(R.layout.fragment_main, container, false);
     }
 
@@ -58,6 +63,8 @@ public class SearchListFragment extends Fragment {
                 TextView videoItemTitleTextView = (TextView) view.findViewById(R.id.videoItemTitleTextView);
                 VideoModel model = (VideoModel) videoItemTitleTextView.getTag();
                 new DownloadFileFromURL(SearchListFragment.this, model).execute(file_url + model.getVideoId());
+
+                //DownloadFileUsingDownloadManager(model);
             }
 
         });
@@ -86,18 +93,44 @@ public class SearchListFragment extends Fragment {
         });
     }
 
+    private void DownloadFileUsingDownloadManager(VideoModel model) {
+        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(file_url + model.getVideoId()));
+        request.setDescription("MP3 ringtone download");
+        request.setTitle(model.getTitle());
+// in order for this if to run, you must use the android 3.2 to compile your app
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            request.allowScanningByMediaScanner();
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        }
+        String fileName = model.getTitle().replaceAll("[^à-úa-zA-Z0-9.-]", "_");
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_RINGTONES, fileName + ".mp3");
+
+// get download service and enqueue file
+        DownloadManager manager = (DownloadManager) getActivity().getSystemService(Context.DOWNLOAD_SERVICE);
+        manager.enqueue(request);
+    }
+
     private void ShowAlertDialogNoConnection() {
+
+        Log.d(TAG, "ShowAlertDialogNoConnection.Started");
+
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setMessage(getString(R.string.NoInternetConnection))
                 .setNeutralButton(getString(R.string.OK), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        Log.d(TAG, "ShowAlertDialogNoConnection.setNeutralButton.Clicked");
+
                         return;
                     }
                 }).show();
     }
 
     public boolean isOnline() {
+
+        Log.d(TAG, "isOnline.Started");
+
         ConnectivityManager cm = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();

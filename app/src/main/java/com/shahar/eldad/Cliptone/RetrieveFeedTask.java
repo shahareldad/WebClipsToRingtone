@@ -27,6 +27,8 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<VideoModel>> 
 
     public RetrieveFeedTask(SearchListFragment activity) {
 
+        Log.d(TAG, "RetrieveFeedTask.Started");
+
         mFragmentActivity = activity;
         pdLoading = new ProgressDialog(mFragmentActivity.getActivity());
     }
@@ -34,6 +36,8 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<VideoModel>> 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
+        Log.d(TAG, "onPreExecute.Started");
 
         pdLoading.setMessage("\tLoading...");
         pdLoading.show();

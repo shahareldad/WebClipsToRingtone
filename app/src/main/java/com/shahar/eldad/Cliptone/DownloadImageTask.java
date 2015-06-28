@@ -9,13 +9,20 @@ import android.widget.ImageView;
 import java.io.InputStream;
 
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    private static final String TAG = "DownloadImageTask";
     ImageView bmImage;
 
     public DownloadImageTask(ImageView bmImage) {
+
+        Log.d(TAG, "DownloadImageTask.Started");
+
         this.bmImage = bmImage;
     }
 
     protected Bitmap doInBackground(String... urls) {
+
+        Log.d(TAG, "doInBackground.Started");
+
         String url = urls[0];
         Bitmap mIcon11 = null;
         try {
@@ -29,6 +36,9 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     }
 
     protected void onPostExecute(Bitmap result) {
+
+        Log.d(TAG, "onPostExecute.Started");
+
         bmImage.setImageBitmap(result);
     }
 }

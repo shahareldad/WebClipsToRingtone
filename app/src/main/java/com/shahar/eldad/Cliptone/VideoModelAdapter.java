@@ -16,6 +16,8 @@ public class VideoModelAdapter extends ArrayAdapter<VideoModel> {
 
     public VideoModelAdapter(Context context, int resource) {
         super(context, resource);
+
+        Log.d(TAG, "VideoModelAdapter.Started");
     }
 
     @Override

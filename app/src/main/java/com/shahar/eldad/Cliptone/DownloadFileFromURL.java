@@ -15,6 +15,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import java.io.*;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -52,6 +53,9 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
     }
 
     private void StartProgressDialog() {
+
+        Log.d(TAG, "StartProgressDialog.Started");
+
         pDialog = new ProgressDialog(mSearchListFragment.getActivity());
         pDialog.setMessage("Downloading file. Please wait...");
         pDialog.setIndeterminate(false);
@@ -69,27 +73,38 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
 
         Log.d(TAG, "doInBackground.Started");
 
+        InputStream input = null;
+        OutputStream output = null;
+        HttpURLConnection connection = null;
+
         int count;
         try {
             mDownloadSuccess = true;
             URL url = new URL(f_url[0]);
-            URLConnection connection = url.openConnection();
+            connection = (HttpURLConnection)url.openConnection();
             connection.connect();
+
+            // expect HTTP 200 OK, so we don't mistakenly save error report
+            // instead of the file
+            if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                Log.e(TAG, "Error: Server returned HTTP " + connection.getResponseCode() + " " + connection.getResponseMessage());
+                mDownloadSuccess = false;
+                return null;
+            }
 
             // this will be useful so that you can show a typical 0-100%
             // progress bar
             mLengthOfFile = connection.getContentLength();
 
             // download the file
-            InputStream input = new BufferedInputStream(url.openStream(),
-                    8192);
+            input = new BufferedInputStream(url.openStream(), 8192);
 
             // Output stream
-            String fileName = mModel.getTitle().replaceAll("[^a-zA-Z0-9.-]", "_");
+            String fileName = mModel.getTitle().replaceAll("[^א-תa-zA-Z0-9.-]", "_");
             File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
             mFile = new File(path, fileName + ".mp3");
 
-            OutputStream output = new FileOutputStream(mFile);
+            output = new FileOutputStream(mFile);
 
             byte data[] = new byte[1024];
 
@@ -108,13 +123,23 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
             // flushing output
             output.flush();
 
-            // closing streams
-            output.close();
-            input.close();
 
         } catch (Exception e) {
-            Log.e("Error: ", e.getMessage());
+            Log.e(TAG, "Error: " + e.getMessage());
             mDownloadSuccess = false;
+        }
+        finally{
+            try{
+                // closing streams
+                if (output != null)
+                    output.close();
+
+                if (input != null)
+                    input.close();
+            }catch (IOException e){}
+
+            if (connection != null)
+                connection.disconnect();
         }
 
         return null;
@@ -155,17 +180,23 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
     }
 
     private void ScanNewDownloadedFile() {
-//        MediaScannerConnection.scanFile(
-//                mSearchListFragment.getActivity(),
-//                new String[]{mFile.getAbsolutePath()},
-//                null,
-//                new MediaScannerConnection.OnScanCompletedListener() {
-//                    public void onScanCompleted(String path, Uri uri) {
-//                    }
-//                });
+
+        Log.d(TAG, "ScanNewDownloadedFile.Started");
+
+        MediaScannerConnection.scanFile(
+                mSearchListFragment.getActivity(),
+                new String[]{mFile.getAbsolutePath()},
+                null,
+                new MediaScannerConnection.OnScanCompletedListener() {
+                    public void onScanCompleted(String path, Uri uri) {
+                    }
+                });
     }
 
     private void DisplaySetDefaultRingtonePopup(DialogInterface.OnClickListener dialogClickListener) {
+
+        Log.d(TAG, "DisplaySetDefaultRingtonePopup.Started");
+
         AlertDialog.Builder builder = new AlertDialog.Builder(mSearchListFragment.getActivity());
         builder.setMessage(mSearchListFragment.getString(R.string.SetDefaultRingtoneDialog))
                 .setPositiveButton("Yes", dialogClickListener)
@@ -173,6 +204,9 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
     }
 
     private DialogInterface.OnClickListener GetDialogClickListener() {
+
+        Log.d(TAG, "GetDialogClickListener.Started");
+
         return new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -192,6 +226,9 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
     }
 
     private void SetDefaultRingtone(){
+
+        Log.d(TAG, "SetDefaultRingtone.Started");
+
         ContentValues values = new ContentValues();
         values.put(MediaStore.MediaColumns.DATA, mFile.getAbsolutePath());
         values.put(MediaStore.MediaColumns.TITLE, mModel.getTitle());
