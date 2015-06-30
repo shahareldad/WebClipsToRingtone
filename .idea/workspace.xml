@@ -29,17 +29,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="9a5140c4-5c03-490c-99e5-964cffd29425" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libs/gson-2.3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libs/jsoup-1.8.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/PreliminaryJsonObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/model_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/model_data.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadImageTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadImageTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/RetrieveFeedTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/RetrieveFeedTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/VideoModelAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/VideoModelAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WebClipsToRingtone.iws" />
@@ -1281,8 +1282,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/RetrieveFeedTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/VideoModelAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/PreliminaryJsonObject.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java" />
       </list>
     </option>
   </component>
@@ -1332,6 +1334,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebClipsToRingtone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1490,19 +1502,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WebClipsToRingtone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
@@ -1642,8 +1662,8 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="DEBUGGABLE_DEVICE" value="andy_os_inc_-andywin-192.168.56.100:5555" />
-    <property name="DEBUGGABLE_PROCESS" value="com.shahar.eldad.webclipstoringtone" />
+    <property name="DEBUGGABLE_DEVICE" value="kingzone-k1_turbo-Z9DM49GM55H6MVZS" />
+    <property name="DEBUGGABLE_PROCESS" value="com.shahar.eldad.Cliptone" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="extract.method.default.visibility" value="private" />
@@ -1830,7 +1850,7 @@
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/app/libs/jackson-core-2.1.3.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/app/libs/jsoup-1.8.2.jar" />
       <envs />
       <method />
     </configuration>
@@ -1976,11 +1996,14 @@
       <workItem from="1435173108067" duration="2412000" />
       <workItem from="1435223295237" duration="3104000" />
       <workItem from="1435473182598" duration="5880000" />
+      <workItem from="1435559571904" duration="662000" />
+      <workItem from="1435590845968" duration="4489000" />
+      <workItem from="1435671787906" duration="4725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37805000" />
+    <option name="totallyTimeSpent" value="47681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1997,9 +2020,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32805908" sideWeight="0.496875" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38607594" sideWeight="0.60194176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38607594" sideWeight="0.60194176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.234375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45886075" sideWeight="0.49676377" order="1" side_tool="false" content_ui="tabs" />
@@ -2008,7 +2031,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39873418" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2036,7 +2059,21 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java</url>
+          <line>73</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java</url>
+          <line>175</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2045,38 +2082,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="130" column="0" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="48" selection-end-column="50" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2377,7 +2382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7978339">
           <caret line="26" column="78" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2385,7 +2389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.39891696">
           <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2393,7 +2396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2401,7 +2403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.2833934">
           <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2415,8 +2416,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/VideoModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06137184">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.08585858">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03068592">
+          <caret line="27" column="131" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Android/android-sdk/sources/android-22/com/android/internal/os/RuntimeInit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Android/android-sdk/sources/android-22/android/os/AsyncTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3321033">
+          <caret line="295" column="0" selection-start-line="295" selection-start-column="0" selection-end-line="295" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2424,33 +2449,25 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/DownloadFileFromURL.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#DownloadFileFromURL#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="docComment;method#onPreExecute#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="method#onPreExecute#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="method#StartProgressDialog#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="docComment;method#doInBackground#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="e#2970#3030#0" expanded="false" />
-            <element signature="e#3723#3753#0" expanded="false" />
-            <element signature="method#onProgressUpdate#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="docComment;method#onPostExecute#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="method#ScanNewDownloadedFile#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="class#5803:5965" expanded="false" />
-            <element signature="method#onScanCompleted#0;class#5803:5965" expanded="false" />
-            <element signature="method#DisplaySetDefaultRingtonePopup#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="method#GetDialogClickListener#0;class#DownloadFileFromURL#0" expanded="false" />
-            <element signature="e#7113#7132#0" expanded="false" />
-            <element signature="method#SetDefaultRingtone#0;class#DownloadFileFromURL#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/SearchListFragment.java">
+    <entry file="jar://$PROJECT_DIR$/app/libs/gson-2.3.1.jar!/com/google/gson/Gson.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32490975">
-          <caret line="99" column="26" selection-start-line="99" selection-start-column="26" selection-end-line="99" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.33203885">
+          <caret line="413" column="0" selection-start-line="413" selection-start-column="0" selection-end-line="413" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/shahar/eldad/Cliptone/PreliminaryJsonObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31365314">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding />
         </state>
       </provider>

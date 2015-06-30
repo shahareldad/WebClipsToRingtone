@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.media.MediaScannerConnection;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -13,9 +12,15 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Toast;
+import com.google.gson.Gson;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -38,16 +43,12 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         mModel = model;
     }
 
-    /**
-     * Before starting background thread Show Progress Bar Dialog
-     * */
     @Override
     protected void onPreExecute() {
 
         Log.d(TAG, "onPreExecute.Started");
 
         super.onPreExecute();
-//        Toast.makeText(mSearchListFragment.getActivity(), mSearchListFragment.getString(R.string.DownloadStarted), Toast.LENGTH_SHORT).show();
 
         StartProgressDialog();
     }
@@ -65,13 +66,37 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         pDialog.show();
     }
 
-    /**
-     * Downloading file in background thread
-     * */
     @Override
     protected String doInBackground(String... f_url) {
 
         Log.d(TAG, "doInBackground.Started");
+
+        InputStream inputStream = GetInputStream(f_url[0]);
+        PreliminaryJsonObject jsonObject = ParseJsonToPreliminaryJsonObject(inputStream);
+
+        try {
+            Document document = Jsoup.connect(jsonObject.Link).get();
+            Elements elements = document.select("a.download");
+            for (Element element : elements) {
+                if (element != null) {
+                    String href = element.attr("href");
+                    if (href != null && href.isEmpty() == false){
+                        DownloadSong(href);
+                        break;
+                    }
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    private void DownloadSong(String urlToDownload) {
+
+        Log.d(TAG, "DownloadSong.Started");
 
         InputStream input = null;
         OutputStream output = null;
@@ -80,7 +105,7 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         int count;
         try {
             mDownloadSuccess = true;
-            URL url = new URL(f_url[0]);
+            URL url = new URL("http://youtubeinmp3.com/download/" + urlToDownload);
             connection = (HttpURLConnection)url.openConnection();
             connection.connect();
 
@@ -89,7 +114,7 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 Log.e(TAG, "Error: Server returned HTTP " + connection.getResponseCode() + " " + connection.getResponseMessage());
                 mDownloadSuccess = false;
-                return null;
+                return;
             }
 
             // this will be useful so that you can show a typical 0-100%
@@ -100,7 +125,7 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
             input = new BufferedInputStream(url.openStream(), 8192);
 
             // Output stream
-            String fileName = mModel.getTitle().replaceAll("[^א-תa-zA-Z0-9.-]", "_");
+            String fileName = mModel.getTitle().replaceAll("[^a-zA-Z0-9.-]", "_");
             File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
             mFile = new File(path, fileName + ".mp3");
 
@@ -141,13 +166,36 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
             if (connection != null)
                 connection.disconnect();
         }
+    }
+
+    private PreliminaryJsonObject ParseJsonToPreliminaryJsonObject(InputStream input) {
+
+        Log.d(TAG, "ParseJsonToPreliminaryJsonObject.Started");
+
+        InputStreamReader inputStreamReader = new InputStreamReader(input);
+        return new Gson().fromJson(inputStreamReader, PreliminaryJsonObject.class);
+    }
+
+    private InputStream GetInputStream(String urlString) {
+
+        Log.d(TAG, "GetInputStream.Started");
+
+        try {
+            URL url = new URL(urlString);
+
+            URLConnection urlConnection = url.openConnection();
+
+            return new BufferedInputStream(urlConnection.getInputStream());
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
 
-    /**
-     * Updating progress bar
-     * */
     protected void onProgressUpdate(String... progress) {
 
         Log.d(TAG, "onProgressUpdate.Started");
@@ -156,9 +204,6 @@ public class DownloadFileFromURL extends AsyncTask<String, String, String> {
         pDialog.setProgress(Integer.parseInt(progress[0]));
     }
 
-    /**
-     * After completing background task Dismiss the progress dialog
-     * **/
     @Override
     protected void onPostExecute(String file_url) {
 

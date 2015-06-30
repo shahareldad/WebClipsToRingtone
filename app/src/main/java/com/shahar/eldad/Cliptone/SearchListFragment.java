@@ -25,7 +25,7 @@ public class SearchListFragment extends Fragment {
     private static final String TAG = "SearchListFragment";
 
     // File url to download
-    private static String file_url = "http://youtubeinmp3.com/fetch/?video=http://www.youtube.com/watch?v=";
+    private static String file_url = "http://youtubeinmp3.com/fetch/?api=advanced&format=JSON&video=http://www.youtube.com/watch?v=";
 
     private EditText mSearchStringEditText;
     private VideoModelAdapter mAdapter;
