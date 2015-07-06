@@ -60,7 +60,7 @@ public class RetrieveFeedTask extends AsyncTask<String, Void, List<VideoModel>> 
 
             YouTube.Search.List search = youtube.search().list("id,snippet");
 
-            search.setKey("AIzaSyD2x4lnEZ41R08vElsmwElaZG9zIlZrPMQ");
+            search.setKey("[Set your Google key here]");
             search.setQ(queryTerm);
 
             search.setType("video");

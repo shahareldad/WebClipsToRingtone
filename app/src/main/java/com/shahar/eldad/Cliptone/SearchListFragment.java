@@ -102,7 +102,7 @@ public class SearchListFragment extends Fragment {
             request.allowScanningByMediaScanner();
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         }
-        String fileName = model.getTitle().replaceAll("[^à-úa-zA-Z0-9.-]", "_");
+        String fileName = model.getTitle().replaceAll("[^a-zA-Z0-9.-]", "_");
         request.setDestinationInExternalPublicDir(Environment.DIRECTORY_RINGTONES, fileName + ".mp3");
 
 // get download service and enqueue file
